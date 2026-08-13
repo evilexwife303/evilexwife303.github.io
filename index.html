@@ -82,10 +82,9 @@
         /* --- PROJECT GRID --- */
         .project-grid { 
             display: grid; 
-            /* Changed minmax to 280px to perfectly fit iPhone screens without breaking */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 40px; 
-            padding: 30px 20px 60px; /* Adjusted padding for mobile */
+            padding: 30px 20px 60px; 
             max-width: 1200px; 
             margin: 0 auto; 
         }
@@ -100,11 +99,6 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-        }
-
-        /* Priority Highlights */
-        .project-card.priority {
-            border-color: #8C1E7F;
         }
 
         /* Scatter the frames slightly for the quirky look */
@@ -135,6 +129,12 @@
             color: #8C1E7F;
             font-size: 14px;
             font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        /* Image Hover Effect for clickable screenshots */
+        a:hover .project-img {
+            opacity: 0.8;
         }
 
         .project-card h3 { 
@@ -143,12 +143,13 @@
             font-size: 1.4rem; 
         }
 
-        .project-badge {
+        /* In Progress Badge */
+        .in-progress-badge {
             display: inline-block;
-            background-color: #DDA0DD;
+            background-color: #EADDFA;
             color: #5D1B85;
             font-size: 0.75rem;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 12px;
             margin-bottom: 12px;
             font-weight: 600;
@@ -200,9 +201,9 @@
         <p class="tagline">Data cleaning, web scraping, and building cool things.</p>
         
         <div class="contact-links">
-            <a href="rcjesinger@gmail.com">Email ✉️</a>
-            <a href="https://github.com/evilexwife303" target="_blank">GitHub 👾</a>
-            <a href="www.linkedin.com/in/rena-jesinger">LinkedIn 💼</a>
+            <a href="mailto:rcjesinger@gmail.com">Email ✉️</a>
+            <a href="https://github.com/evilexwife303" target="_blank">GitHub 💻</a>
+            <a href="https://www.linkedin.com/in/rena-jesinger" target="_blank">LinkedIn 💼</a>
         </div>
     </header>
 
@@ -215,37 +216,40 @@
     <div class="project-grid">
 
         <!-- PRIORITY 1: gynlog -->
-        <div class="project-card priority">
+        <div class="project-card">
             <div class="project-img">Screenshot / Image</div>
             <h3>Gynlog</h3>
-            <span class="project-badge">Priority Project</span>
             <p>A specialized tracking and logging application designed for secure, organized medical data management and visualization.</p>
             <a href="#" class="cute-btn">View App</a>
         </div>
 
         <!-- PRIORITY 2: Chess Thesis Dashboard -->
-        <div class="project-card priority">
+        <div class="project-card">
             <div class="project-img">Screenshot / Image</div>
             <h3>Chess Thesis Dashboard</h3>
-            <span class="project-badge">Priority Project</span>
             <p>An interactive multi-tab dashboard analyzing historical elite chess data. Parses large-scale PGN files to visualize statistical variations in move accuracy.</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
 
         <!-- PRIORITY 3: flockyou -->
-        <div class="project-card priority">
-            <div class="project-img">Screenshot / Image</div>
-            <h3>FlockYou</h3>
-            <span class="project-badge">Priority Project</span>
-            <p>An open-source geospatial dashboard mapping the intersection of automated license plate readers (ALPR) and sensitive community infrastructure.</p>
-            <a href="https://evilexwife303.github.io/flockyou/" class="cute-btn" target="_blank">View Project</a>
+        <div class="project-card">
+            <!-- Wrapped the image in an anchor tag pointing to GitHub -->
+            <a href="https://github.com/evilexwife303/flockyou" target="_blank">
+                <img src="flock.png" alt="FlockYou ALPR Dashboard" class="project-img" style="border: 1px solid #eee; margin-bottom: 20px;">
+            </a>
+            <h3>FlockYou: ALPR Dragnet</h3>
+            <p>An open-source geospatial dashboard mapping the intersection of automated license plate readers (ALPR) and sensitive community infrastructure. Built for Sacramento, but designed as a forkable framework so anyone can map the surveillance footprint of their own city.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://evilexwife303.github.io/flockyou/" class="cute-btn" target="_blank">Live Map</a>
+                <a href="https://github.com/evilexwife303/flockyou" class="cute-btn" target="_blank" style="background-color: #555;">GitHub 💻</a>
+            </div>
         </div>
-
 
         <!-- EXTRA 1: Hold Music -->
         <div class="project-card">
             <div class="project-img">Screenshot / Image</div>
             <h3>Hold Music</h3>
+            <span class="in-progress-badge">In Progress 🚧</span>
             <p>An exploration into audio processing, automated queue generation, and unique soundscape analysis.</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
@@ -254,6 +258,7 @@
         <div class="project-card">
             <div class="project-img">Screenshot / Image</div>
             <h3>Lifefeed</h3>
+            <span class="in-progress-badge">In Progress 🚧</span>
             <p>A dynamic web application built to aggregate, clean, and display live data streams in an easily digestible timeline format.</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
@@ -262,6 +267,7 @@
         <div class="project-card">
             <div class="project-img">Screenshot / Image</div>
             <h3>Flock Solar</h3>
+            <span class="in-progress-badge">In Progress 🚧</span>
             <p>Environmental data tracking project visualizing the geographical impacts and efficiency metrics of regional solar arrays.</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
