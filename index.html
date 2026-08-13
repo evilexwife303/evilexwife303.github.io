@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>evilexwife303</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>evilexwife303 | Portfolio</title>
     
     <!-- Importing cute/quirky Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,30 +15,62 @@
         
         body { 
             font-family: 'Fredoka', sans-serif; 
-            background-color: #fdfafc; /* Very light pink/purple tint for the background */
-            color: #333; 
-            overflow-x: hidden;
+            background-color: #F8F0FC; /* Soft unique lavender background */
+            color: #3B1C4A; 
+            overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER & CONTACT (MOVED TO TOP) --- */
         header { 
-            background-color: #8C1E7F; 
+            background: linear-gradient(135deg, #8C1E7F 0%, #5D1B85 100%); 
             color: white; 
-            padding: 60px 20px; 
+            padding: 50px 20px 30px; 
             text-align: center; 
-            box-shadow: 0 4px 12px rgba(140, 30, 127, 0.2);
+            box-shadow: 0 4px 15px rgba(93, 27, 133, 0.3);
+            border-bottom: 5px dashed #DDA0DD;
         }
         
         header h1 { 
-            font-family: 'Space Mono', monospace; /* Gives the username a cool, hacker-ish vibe */
-            font-size: 3.5rem; 
+            font-family: 'Space Mono', monospace; 
+            font-size: 3rem; 
             letter-spacing: -2px; 
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+        }
+
+        header p.tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* Top Contact Links */
+        .contact-links {
+            background-color: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-links a { 
+            display: inline-block;
+            color: #FFFFFF; 
+            font-weight: 600; 
+            text-decoration: none; 
+            margin: 0 12px;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        
+        .contact-links a:hover { 
+            color: #F8F0FC;
+            transform: scale(1.1);
         }
 
         .intro-text {
             text-align: center;
-            padding: 50px 20px 10px;
+            padding: 40px 20px 10px;
         }
         
         .intro-text h2 {
@@ -50,33 +82,40 @@
         /* --- PROJECT GRID --- */
         .project-grid { 
             display: grid; 
-            /* Creates a responsive grid that fits as many 320px cards as possible */
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 50px; 
-            padding: 40px 60px; 
-            max-width: 1300px; 
+            /* Changed minmax to 280px to perfectly fit iPhone screens without breaking */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 40px; 
+            padding: 30px 20px 60px; /* Adjusted padding for mobile */
+            max-width: 1200px; 
             margin: 0 auto; 
         }
         
         /* --- QUIRKY POLAROID FRAMES --- */
         .project-card { 
             background: #ffffff; 
-            padding: 15px 15px 35px 15px; /* Extra padding on the bottom for Polaroid look */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
-            border-radius: 4px;
-            border: 1px solid #eee;
+            padding: 15px 15px 30px 15px;
+            box-shadow: 0 8px 20px rgba(93, 27, 133, 0.1); 
+            border-radius: 8px;
+            border: 2px solid #EADDFA;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Scatter the frames with alternating CSS rotations */
-        .project-card:nth-child(odd) { transform: rotate(-2deg); }
-        .project-card:nth-child(even) { transform: rotate(3deg); }
-        .project-card:nth-child(3n) { transform: rotate(-1.5deg); }
+        /* Priority Highlights */
+        .project-card.priority {
+            border-color: #8C1E7F;
+        }
+
+        /* Scatter the frames slightly for the quirky look */
+        .project-card:nth-child(odd) { transform: rotate(-1.5deg); }
+        .project-card:nth-child(even) { transform: rotate(2deg); }
+        .project-card:nth-child(3n) { transform: rotate(-1deg); }
         
-        /* Straighten out and pop up on hover */
+        /* Straighten out on hover */
         .project-card:hover { 
-            transform: rotate(0deg) scale(1.03); 
-            box-shadow: 0 15px 30px rgba(140, 30, 127, 0.15); 
+            transform: rotate(0deg) scale(1.02); 
+            box-shadow: 0 15px 30px rgba(93, 27, 133, 0.2); 
             z-index: 10; 
             position: relative;
         }
@@ -84,23 +123,36 @@
         /* Image styling inside the frame */
         .project-img { 
             width: 100%; 
-            height: 220px; 
-            object-fit: cover; /* Keeps screenshots from stretching weirdly */
-            background-color: #f0e6ef; 
+            height: 200px; 
+            object-fit: cover; 
+            background-color: #F4E8F8; 
             border: 2px dashed #8C1E7F;
-            border-radius: 4px; 
+            border-radius: 6px; 
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #8C1E7F;
             font-size: 14px;
+            font-weight: 500;
         }
 
         .project-card h3 { 
-            color: #8C1E7F; 
-            margin: 0 0 10px 0; 
+            color: #5D1B85; 
+            margin: 0 0 8px 0; 
             font-size: 1.4rem; 
+        }
+
+        .project-badge {
+            display: inline-block;
+            background-color: #DDA0DD;
+            color: #5D1B85;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            width: fit-content;
         }
         
         .project-card p { 
@@ -108,6 +160,7 @@
             line-height: 1.5; 
             color: #666; 
             margin-bottom: 20px; 
+            flex-grow: 1; /* Pushes the button to the bottom */
         }
         
         /* Cute Buttons */
@@ -115,112 +168,104 @@
             display: inline-block; 
             background-color: #8C1E7F; 
             color: white; 
-            padding: 10px 20px; 
+            padding: 12px 20px; 
             border-radius: 25px; 
             text-decoration: none; 
             font-weight: 600; 
-            font-size: 0.9rem; 
+            font-size: 0.95rem; 
+            text-align: center;
             transition: background 0.2s, transform 0.1s;
         }
         
         .cute-btn:hover { 
-            background-color: #6a1660; 
+            background-color: #5D1B85; 
             transform: translateY(-2px);
         }
 
-        /* --- FOOTER / CONTACT --- */
-        footer { 
-            background-color: #ffffff; 
-            border-top: 4px dashed #8C1E7F; 
-            padding: 50px 20px; 
-            text-align: center; 
-            margin-top: 60px; 
-        }
-        
-        footer h2 { 
-            color: #8C1E7F; 
-            margin-top: 0; 
-            margin-bottom: 15px;
-        }
-        
-        .contact-links a { 
-            display: inline-block;
-            color: #8C1E7F; 
-            font-weight: bold; 
-            text-decoration: none; 
-            margin: 0 15px;
-            font-size: 1.1rem;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
-        }
-        
-        .contact-links a:hover { 
-            border-color: #8C1E7F; 
+        /* --- MOBILE TWEAKS FOR IPHONE --- */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.3rem; }
+            .contact-links { padding: 10px 15px; }
+            .contact-links a { margin: 0 8px; font-size: 1rem; }
+            .project-grid { gap: 30px; }
+            .project-card { transform: rotate(0) !important; /* Disable rotation on tiny screens for cleaner reading */ }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Header & Contact Section (Now at the top!) -->
     <header>
         <h1>evilexwife303</h1>
+        <p class="tagline">Data cleaning, web scraping, and building cool things.</p>
+        
+        <div class="contact-links">
+            <a href="mailto:your-email@ucdavis.edu">Email ✉️</a>
+            <a href="https://github.com/evilexwife303" target="_blank">GitHub 👾</a>
+            <a href="#">LinkedIn 💼</a>
+        </div>
     </header>
 
     <!-- Intro Text -->
     <div class="intro-text">
-        <h2>hihi! look at the projects below ✧.*</h2>
+        <h2>hihi! look at my projects below ✧.*</h2>
     </div>
 
     <!-- Portfolio Grid -->
     <div class="project-grid">
 
-        <!-- Project 1 -->
-        <div class="project-card">
-            <!-- Replace the src="" with your actual screenshot like src="flock-screenshot.jpg" -->
-            <img src="" alt="Screenshot" class="project-img" style="border: 2px dashed #8C1E7F; text-align: center; color: #8C1E7F;" alt="Screenshot goes here">
-            <h3>FlockYou: ALPR Dragnet</h3>
-            <p>An open-source geospatial dashboard mapping the intersection of automated license plate readers (ALPR) and sensitive community infrastructure using Python and Leaflet.js.</p>
-            <a href="https://evilexwife303.github.io/flockyou/" class="cute-btn" target="_blank">View Map 📍</a>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-            <img src="" alt="Screenshot" class="project-img" style="border: 2px dashed #8C1E7F; text-align: center; color: #8C1E7F;" alt="Screenshot goes here">
-            <h3>Elite Chess Analysis</h3>
-            <p>An interactive multi-tab Quarto dashboard utilizing R and Observable JS to parse large-scale PGN files and visualize statistical variations in historical elite chess move accuracy.</p>
+        <!-- PRIORITY 1: Chess Thesis Dashboard -->
+        <div class="project-card priority">
+            <div class="project-img">Screenshot / Image</div>
+            <h3>Chess Thesis Dashboard</h3>
+            <span class="project-badge">Priority Project</span>
+            <p>An interactive multi-tab dashboard analyzing historical elite chess data. Parses large-scale PGN files to visualize statistical variations in move accuracy.</p>
             <a href="#" class="cute-btn">View Dashboard ♞</a>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <img src="" alt="Screenshot" class="project-img" style="border: 2px dashed #8C1E7F; text-align: center; color: #8C1E7F;" alt="Screenshot goes here">
-            <h3>NetzDG Automated ID</h3>
-            <p>A rigorous internet law research project involving the manual collection, structural formatting, and human-verification of over 400 Twitter records to identify automated bot behavior.</p>
-            <a href="#" class="cute-btn">Read Research 📑</a>
+        <!-- PRIORITY 2: flockyou -->
+        <div class="project-card priority">
+            <div class="project-img">Screenshot / Image</div>
+            <h3>FlockYou</h3>
+            <span class="project-badge">Priority Project</span>
+            <p>An open-source geospatial dashboard mapping the intersection of automated license plate readers (ALPR) and sensitive community infrastructure.</p>
+            <a href="https://evilexwife303.github.io/flockyou/" class="cute-btn" target="_blank">View Map 📍</a>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-            <img src="" alt="Screenshot" class="project-img" style="border: 2px dashed #8C1E7F; text-align: center; color: #8C1E7F;" alt="Screenshot goes here">
-            <h3>Bilingual Semantic Memory</h3>
-            <p>An empirical developmental psychology research paper executing independent-samples t-tests via Jamovi to study the interaction between bilingual language acquisition and adult memory recall.</p>
-            <a href="#" class="cute-btn">View Paper 🧠</a>
+        <!-- PRIORITY 3: gynlog -->
+        <div class="project-card priority">
+            <div class="project-img">Screenshot / Image</div>
+            <h3>Gynlog</h3>
+            <span class="project-badge">Priority Project</span>
+            <p>A specialized tracking and logging application designed for secure, organized medical data management and visualization.</p>
+            <a href="#" class="cute-btn">View Project 🌸</a>
         </div>
 
-        <!-- Add more project cards by copying and pasting the block above! -->
+        <!-- EXTRA 1: Hold Music -->
+        <div class="project-card">
+            <div class="project-img">Screenshot / Image</div>
+            <h3>Hold Music</h3>
+            <p>An exploration into audio processing, automated queue generation, and unique soundscape analysis.</p>
+            <a href="#" class="cute-btn">Listen / View 🎵</a>
+        </div>
+
+        <!-- EXTRA 2: Lifefeed -->
+        <div class="project-card">
+            <div class="project-img">Screenshot / Image</div>
+            <h3>Lifefeed</h3>
+            <p>A dynamic web application built to aggregate, clean, and display live data streams in an easily digestible timeline format.</p>
+            <a href="#" class="cute-btn">View App 📱</a>
+        </div>
+
+        <!-- EXTRA 3: Flock Solar -->
+        <div class="project-card">
+            <div class="project-img">Screenshot / Image</div>
+            <h3>Flock Solar</h3>
+            <p>Environmental data tracking project visualizing the geographical impacts and efficiency metrics of regional solar arrays.</p>
+            <a href="#" class="cute-btn">View Data ☀️</a>
+        </div>
 
     </div>
-
-    <!-- Contact Footer -->
-    <footer>
-        <h2>Let's Connect!</h2>
-        <p style="margin-bottom: 20px; color: #666;">Data cleaning, web scraping, and building cool things.</p>
-        <div class="contact-links">
-            <a href="mailto:your-email@ucdavis.edu">Email Me</a>
-            <a href="https://github.com/evilexwife303" target="_blank">GitHub</a>
-            <a href="#">LinkedIn</a>
-        </div>
-    </footer>
 
 </body>
 </html>
