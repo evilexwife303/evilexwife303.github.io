@@ -20,7 +20,7 @@
             overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
         }
 
-        /* --- HEADER & CONTACT (MOVED TO TOP) --- */
+        /* --- HEADER & CONTACT --- */
         header { 
             background: linear-gradient(135deg, #8C1E7F 0%, #5D1B85 100%); 
             color: white; 
@@ -118,7 +118,7 @@
         .project-img { 
             width: 100%; 
             height: 200px; 
-            object-fit: cover; 
+            object-fit: contain; /* Keeps full screenshot visible without clipping edges */
             background-color: #F4E8F8; 
             border: 2px dashed #8C1E7F;
             border-radius: 6px; 
@@ -134,7 +134,7 @@
 
         /* Image Hover Effect for clickable screenshots */
         a:hover .project-img {
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         .project-card h3 { 
@@ -233,13 +233,12 @@
 
         <!-- PRIORITY 3: flockyou -->
         <div class="project-card">
-            <!-- Wrapped the placeholder image in an anchor tag pointing to GitHub -->
             <a href="https://github.com/evilexwife303/flockyou" target="_blank" style="text-decoration: none;">
-                <div class="project-img">Screenshot / Image</div>
+                <img src="flock.png" alt="FlockYou ALPR Dashboard" class="project-img">
             </a>
             <h3>FlockYou: ALPR Dragnet</h3>
             <p>An open-source geospatial dashboard mapping the intersection of automated license plate readers (ALPR) and sensitive community infrastructure. Built for Sacramento, but designed as a forkable framework so anyone can map the surveillance footprint of their own city.</p>
-            <a href="https://github.com/evilexwife303/flockyou" class="cute-btn" target="_blank">View on GitHub 💻</a>
+            <a href="https://github.com/evilexwife303/flockyou" class="cute-btn" target="_blank" style="background-color: #555;">GitHub 💻</a>
         </div>
 
         <!-- EXTRA 1: Hold Music -->
