@@ -120,23 +120,37 @@
         .project-card:nth-child(even)::before { transform: rotate(4deg); background-color: rgba(140, 30, 127, 0.4); }
         .project-card:nth-child(3n)::before { transform: rotate(-1deg); background-color: rgba(93, 27, 133, 0.3); }
 
+        /* The wrapper fixing the gap issue */
+        .img-link {
+            display: block;
+            text-decoration: none;
+            line-height: 0; /* Kills the invisible space beneath images */
+            margin-bottom: 20px;
+        }
+
         .project-img { 
+            display: block; /* Prevents inline spacing bugs */
             width: 100%; 
             height: auto; 
             aspect-ratio: 16/9; 
             object-fit: cover; 
-            object-position: top left; /* <--- THIS ANCHORS IT TO THE TOP LEFT */
-            background-color: #F4E8F8; 
+            object-position: top left; 
             border: 2px dashed #8C1E7F;
             border-radius: 6px; 
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: #8C1E7F;
             font-size: 14px;
             font-weight: 500;
             transition: opacity 0.2s;
+            /* Removed background-color to stop color bleeding on edges */
+        }
+
+        /* For the placeholder blocks that don't have images yet */
+        .placeholder-img {
+            background-color: #F4E8F8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: normal;
         }
 
         .project-card h3 { 
@@ -233,7 +247,7 @@
 
         <!-- PRIORITY 1: gynlog -->
         <div class="project-card">
-            <div class="project-img">Screenshot / Image</div>
+            <div class="project-img placeholder-img" style="margin-bottom: 20px;">Screenshot / Image</div>
             <h3>Gynlog</h3>
             <p>A specialized tracking and logging application designed for secure, organized medical data management and visualization.</p>
             <a href="#" class="cute-btn">View App</a>
@@ -241,7 +255,7 @@
 
         <!-- PRIORITY 2: Chess Thesis Dashboard -->
         <div class="project-card">
-            <a href="https://rcjesinger.shinyapps.io/chess-thesis-dashboard/" target="_blank" style="text-decoration: none;">
+            <a href="https://rcjesinger.shinyapps.io/chess-thesis-dashboard/" target="_blank" class="img-link">
                 <img src="chess.png" alt="Chess Thesis Dashboard" class="project-img">
             </a>
             <h3>Chess Thesis Dashboard</h3>
@@ -251,7 +265,7 @@
 
         <!-- PRIORITY 2.5: Trading Strategy -->
         <div class="project-card">
-            <a href="https://trading-analysis.fly.dev/" target="_blank" style="text-decoration: none;">
+            <a href="https://trading-analysis.fly.dev/" target="_blank" class="img-link">
                 <img src="dev.png" alt="Optimal Trading Strategy Dashboard" class="project-img">
             </a>
             <h3>Optimal Trading Strategy</h3>
@@ -261,7 +275,7 @@
 
         <!-- PRIORITY 3: flockyou -->
         <div class="project-card">
-            <a href="https://github.com/evilexwife303/flockyou" target="_blank" style="text-decoration: none;">
+            <a href="https://github.com/evilexwife303/flockyou" target="_blank" class="img-link">
                 <img src="flock.png" alt="FlockYou ALPR Dashboard" class="project-img">
             </a>
             <h3>FlockYou: ALPR Dragnet</h3>
@@ -271,7 +285,7 @@
 
         <!-- EXTRA 1: Hold Music -->
         <div class="project-card">
-            <div class="project-img">Screenshot / Image</div>
+            <div class="project-img placeholder-img" style="margin-bottom: 20px;">Screenshot / Image</div>
             <h3>Hold Music</h3>
             <span class="in-progress-badge">In Progress 🚧</span>
             <p>hihi</p>
@@ -280,7 +294,7 @@
 
         <!-- EXTRA 2: Lifefeed -->
         <div class="project-card">
-            <div class="project-img">Screenshot / Image</div>
+            <div class="project-img placeholder-img" style="margin-bottom: 20px;">Screenshot / Image</div>
             <h3>Lifefeed</h3>
             <span class="in-progress-badge">In Progress 🚧</span>
             <p>hihi</p>
@@ -289,7 +303,7 @@
 
         <!-- EXTRA 3: Flock Solar -->
         <div class="project-card">
-            <div class="project-img">Screenshot / Image</div>
+            <div class="project-img placeholder-img" style="margin-bottom: 20px;">Screenshot / Image</div>
             <h3>Flock Solar</h3>
             <span class="in-progress-badge">In Progress 🚧</span>
             <p>hihi</p>
