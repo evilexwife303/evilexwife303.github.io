@@ -15,9 +15,9 @@
         
         body { 
             font-family: 'Fredoka', sans-serif; 
-            background-color: #F8F0FC; /* Soft unique lavender background */
+            background-color: #F8F0FC; 
             color: #3B1C4A; 
-            overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
+            overflow-x: hidden; 
         }
 
         /* --- HEADER & CONTACT --- */
@@ -44,7 +44,6 @@
             margin-bottom: 25px;
         }
 
-        /* Top Contact Links */
         .contact-links {
             background-color: rgba(255, 255, 255, 0.15);
             display: inline-block;
@@ -101,12 +100,10 @@
             flex-direction: column;
         }
 
-        /* Scatter the frames slightly for the quirky look */
         .project-card:nth-child(odd) { transform: rotate(-1.5deg); }
         .project-card:nth-child(even) { transform: rotate(2deg); }
         .project-card:nth-child(3n) { transform: rotate(-1deg); }
         
-        /* Straighten out on hover */
         .project-card:hover { 
             transform: rotate(0deg) scale(1.02); 
             box-shadow: 0 15px 30px rgba(93, 27, 133, 0.2); 
@@ -114,11 +111,10 @@
             position: relative;
         }
         
-        /* Image styling inside the frame */
         .project-img { 
             width: 100%; 
             height: 200px; 
-            object-fit: contain; /* Keeps full screenshot visible without clipping edges */
+            object-fit: contain; 
             background-color: #F4E8F8; 
             border: 2px dashed #8C1E7F;
             border-radius: 6px; 
@@ -132,7 +128,6 @@
             transition: opacity 0.2s;
         }
 
-        /* Image Hover Effect for clickable screenshots */
         a:hover .project-img {
             opacity: 0.85;
         }
@@ -143,7 +138,6 @@
             font-size: 1.4rem; 
         }
 
-        /* In Progress Badge */
         .in-progress-badge {
             display: inline-block;
             background-color: #EADDFA;
@@ -161,10 +155,9 @@
             line-height: 1.5; 
             color: #666; 
             margin-bottom: 20px; 
-            flex-grow: 1; /* Pushes the button to the bottom */
+            flex-grow: 1; 
         }
         
-        /* Cute Buttons */
         .cute-btn { 
             display: inline-block; 
             background-color: #8C1E7F; 
@@ -183,19 +176,17 @@
             transform: translateY(-2px);
         }
 
-        /* --- MOBILE TWEAKS FOR IPHONE --- */
         @media (max-width: 600px) {
             header h1 { font-size: 2.3rem; }
             .contact-links { padding: 10px 15px; }
             .contact-links a { margin: 0 8px; font-size: 1rem; }
             .project-grid { gap: 30px; }
-            .project-card { transform: rotate(0) !important; /* Disable rotation on tiny screens for cleaner reading */ }
+            .project-card { transform: rotate(0) !important; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Contact Section -->
     <header>
         <h1>evilexwife303</h1>
         <p class="tagline">Data cleaning, web scraping, and building cool things.</p>
@@ -207,12 +198,10 @@
         </div>
     </header>
 
-    <!-- Intro Text -->
     <div class="intro-text">
         <h2>hihi! look at my projects below ✧.*</h2>
     </div>
 
-    <!-- Portfolio Grid -->
     <div class="project-grid">
 
         <!-- PRIORITY 1: gynlog -->
@@ -225,10 +214,22 @@
 
         <!-- PRIORITY 2: Chess Thesis Dashboard -->
         <div class="project-card">
-            <div class="project-img">Screenshot / Image</div>
+            <a href="https://rcjesinger.shinyapps.io/chess-thesis-dashboard/" target="_blank" style="text-decoration: none;">
+                <img src="chess.png" alt="Chess Thesis Dashboard" class="project-img">
+            </a>
             <h3>Chess Thesis Dashboard</h3>
             <p>An interactive multi-tab dashboard analyzing historical elite chess data. Parses large-scale PGN files to visualize statistical variations in move accuracy.</p>
-            <a href="#" class="cute-btn">View Project</a>
+            <a href="https://rcjesinger.shinyapps.io/chess-thesis-dashboard/" target="_blank" class="cute-btn">View Project</a>
+        </div>
+
+        <!-- PRIORITY 2.5: Trading Strategy -->
+        <div class="project-card">
+            <a href="https://trading-analysis.fly.dev/" target="_blank" style="text-decoration: none;">
+                <img src="dev.png" alt="Optimal Trading Strategy Dashboard" class="project-img">
+            </a>
+            <h3>Optimal Trading Strategy</h3>
+            <p>Can AI outsmart Wall Street? An interactive backtesting dashboard that analyzes 25 years of market data to determine if machine learning models can provide a better risk-adjusted return than traditional trading methods.</p>
+            <a href="https://trading-analysis.fly.dev/" target="_blank" class="cute-btn">View Project</a>
         </div>
 
         <!-- PRIORITY 3: flockyou -->
@@ -246,7 +247,7 @@
             <div class="project-img">Screenshot / Image</div>
             <h3>Hold Music</h3>
             <span class="in-progress-badge">In Progress 🚧</span>
-            <p>An exploration into audio processing, automated queue generation, and unique soundscape analysis.</p>
+            <p>hihi</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
 
@@ -255,7 +256,7 @@
             <div class="project-img">Screenshot / Image</div>
             <h3>Lifefeed</h3>
             <span class="in-progress-badge">In Progress 🚧</span>
-            <p>A dynamic web application built to aggregate, clean, and display live data streams in an easily digestible timeline format.</p>
+            <p>hihi</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
 
@@ -264,7 +265,7 @@
             <div class="project-img">Screenshot / Image</div>
             <h3>Flock Solar</h3>
             <span class="in-progress-badge">In Progress 🚧</span>
-            <p>Environmental data tracking project visualizing the geographical impacts and efficiency metrics of regional solar arrays.</p>
+            <p>hihi</p>
             <a href="#" class="cute-btn">View Project</a>
         </div>
 
