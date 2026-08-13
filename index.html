@@ -16,12 +16,12 @@
         body { 
             font-family: 'Fredoka', sans-serif; 
             background-color: #F8F0FC; 
-            /* NEW: Cute subtle polka dot pattern */
+            /* Cute subtle polka dot pattern */
             background-image: radial-gradient(#EADDFA 2px, transparent 2px);
             background-size: 30px 30px;
             color: #3B1C4A; 
             overflow-x: hidden; 
-            /* NEW: Sparkle cursor for desktop */
+            /* Sparkle cursor for desktop */
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><text y="20" font-size="20">✨</text></svg>'), auto;
         }
 
@@ -101,7 +101,7 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
         }
 
-        /* NEW: Cute Washi Tape effect on the cards */
+        /* Cute Washi Tape effect on the cards */
         .project-card::before {
             content: '';
             position: absolute;
@@ -110,7 +110,7 @@
             margin-left: -40px;
             width: 80px;
             height: 25px;
-            background-color: rgba(221, 160, 221, 0.65); /* Soft purple tape */
+            background-color: rgba(221, 160, 221, 0.65); 
             transform: rotate(-3deg);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             z-index: 5;
@@ -122,8 +122,9 @@
 
         .project-img { 
             width: 100%; 
-            height: 200px; 
-            object-fit: contain; 
+            height: auto; /* Natural height */
+            aspect-ratio: 16/9; /* Forces a uniform widescreen ratio */
+            object-fit: cover; /* Fills the space without squishing */
             background-color: #F4E8F8; 
             border: 2px dashed #8C1E7F;
             border-radius: 6px; 
@@ -176,14 +177,13 @@
             transition: background 0.2s, transform 0.1s;
         }
 
-        /* NEW: Bouncy click effect */
+        /* Bouncy click effect */
         .cute-btn:active {
             transform: scale(0.95) !important;
         }
 
         /* ========================================================
            DESKTOP ONLY HOVER EFFECTS 
-           (This fixes the iOS issue by ignoring these rules on touch)
            ======================================================== */
         @media (hover: hover) and (pointer: fine) {
             .project-card:nth-child(odd) { transform: rotate(-1.5deg); }
@@ -207,7 +207,6 @@
             .contact-links { padding: 10px 15px; }
             .contact-links a { margin: 0 8px; font-size: 1rem; }
             .project-grid { gap: 30px; }
-            /* Hard stop on any rotations for small screens */
             .project-card { transform: none !important; transition: none !important; }
         }
     </style>
